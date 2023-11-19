@@ -40,7 +40,7 @@ const Input : React.FC<InputProps> = ({
         id={id}
         disabled={disabled}
         {...register(id, { required })}
-        placeholder=" "
+        placeholder=""
         type={type}
         className={`
           peer
