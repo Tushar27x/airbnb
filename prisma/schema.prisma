@@ -47,7 +47,7 @@ model Accounts {
 
 model Listing {
   id            String         @id @default(auto()) @map("_id") @db.ObjectId
-  type          String
+  title         String
   description   String
   imageSrc      String
   createdAt     DateTime       @default(now())
