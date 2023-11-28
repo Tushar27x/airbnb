@@ -5,11 +5,11 @@ import Image from 'next/image'
 import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
-import { User } from '@prisma/client'
+import { SafeUser } from '@/app/types'
 import Categories from './Categories'
 
 interface NavbarProps {
-    currUser?: User | null;
+    currUser?: SafeUser | null;
 }
 const Navbar:React.FC<NavbarProps> = ({currUser}) => {
   
