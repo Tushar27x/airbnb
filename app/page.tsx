@@ -1,4 +1,5 @@
 
+import getCurrUser from './actions/getCurrUser';
 import getListings from './actions/getListings';
 import ClientOnly from './components/ClientOnly'
 import Container  from './components/Container'
@@ -7,7 +8,7 @@ import ListingCard from './components/listings/ListingCard';
 
 export default async function Home() {
   const listings = await getListings();
-  const isEmpty = true;
+  const currUser = await getCurrUser();
   if(listings.length === 0){
     return(
       <ClientOnly>
@@ -22,6 +23,7 @@ export default async function Home() {
           {
             listings.map(item => (
               <ListingCard 
+                currUser={currUser}
                 key={item.id}
                 data={item}/>
             ))

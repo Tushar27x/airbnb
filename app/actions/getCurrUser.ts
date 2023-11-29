@@ -19,7 +19,12 @@ export default async function getCurrUser() {
             return null;
         }
 
-        return currUser;
+        return {
+            ...currUser,
+            createdAt: currUser.createdAt.toISOString(),
+            updatedAt: currUser.updatedAt.toISOString(),
+            emailVerified: currUser.emailVerified?.toISOString() || null
+        };
     }catch(err){
         return null;
     }
