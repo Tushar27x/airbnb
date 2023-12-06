@@ -1,6 +1,6 @@
 "use client"
 import { Listing, Reservations } from "@prisma/client"
-import {SafeListing, SafeUser} from '@/app/types'
+import {SafeListing, SafeReservation, SafeUser} from '@/app/types'
 import { useRouter } from "next/navigation";
 import useCountries from "@/app/hooks/useCountries";
 import { useCallback, useMemo } from "react";
@@ -11,7 +11,7 @@ import Button from "../Button";
 
 interface ListingCardProps {
   data: SafeListing;
-  reservation ?: Reservations;
+  reservation ?: SafeReservation;
   onAction ?: (id: string) => void;
   disabled ?: boolean;
   actionLabel ?: string;
@@ -79,25 +79,23 @@ const ListingCard: React.FC<ListingCardProps> = ({
           {reservationDate || data.category}
         </div>
         <div className="flex flex-row items-center gap-1">
-          ${price}
-          {
-            !reservation && (
-              <div className="font-light">night</div>
-            )
-          }
-          {onAction && actionLabel && (
-            <Button 
-              disabled={disabled}
-              small
-              label={actionLabel}
-              onClick={handleCancel}
-            />
+          <div className="font-semibold">
+            $ {price}
+          </div>
+          {!reservation && (
+            <div className="font-light">night</div>
           )}
         </div>
-        
+        {onAction && actionLabel && (
+          <Button
+            disabled={disabled}
+            small
+            label={actionLabel} 
+            onClick={handleCancel}
+          />
+        )}
       </div>
     </div>
-  )
+   );
 }
-
-export default ListingCard
+export default ListingCard;

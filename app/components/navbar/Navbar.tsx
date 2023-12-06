@@ -7,18 +7,18 @@ import Search from './Search'
 import UserMenu from './UserMenu'
 import { SafeUser } from '@/app/types'
 import Categories from './Categories'
+import { useRouter } from 'next/navigation'
 
 interface NavbarProps {
     currUser?: SafeUser | null;
 }
 const Navbar:React.FC<NavbarProps> = ({currUser}) => {
-  
   return (
     <nav className='fixed w-full shadow-sm z-10 bg-white'>
         <div className='py-4 border-b'>
             <Container>
                 <div className='flex flex-row items-center justify-between'>
-                    <Logo /> 
+                    <Logo/> 
                     <Search /> 
                     <UserMenu currUser = {currUser}/>             
                 </div>

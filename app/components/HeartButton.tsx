@@ -9,6 +9,8 @@ interface HeartButtonProps {
 const HeartButton: React.FC<HeartButtonProps> = ({currUser, listingId}) => {
   
   const {hasFavorited,toggleFavorite} = useFavorites({currUser, listingId});
+  // const hasFavorited= true;
+  // const toggleFavorite =()=>{};
   return (
     <div onClick={toggleFavorite} className='relative hover:opacity-80 transition cursor-pointer'>
       <AiOutlineHeart size={28} className="fill-white absolute -top-[2px] -right-[2px]" />
