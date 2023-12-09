@@ -8,7 +8,7 @@ interface IParams {
 
 export async function DELETE(req:Request,{params}:{params:IParams}) {
     try{
-        const currUser = getCurrUser();
+        const currUser = await getCurrUser();
         if(!currUser){
             return NextResponse.error();
         }
@@ -18,7 +18,7 @@ export async function DELETE(req:Request,{params}:{params:IParams}) {
             throw new Error("Invalid Id")
         }
 
-        const listing = await prisma.listing.deleteMany({where:{id:listingId, userId:currUser.id}})
+        const listing = await prisma.listing.deleteMany({where:{id:listingId, userId:currUser.}})
         
         return NextResponse.json(listing);
     }catch(err: any){
