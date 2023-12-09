@@ -18,7 +18,7 @@ export async function DELETE(req:Request,{params}:{params:IParams}) {
             throw new Error("Invalid Id")
         }
 
-        const listing = await prisma.listing.deleteMany({where:{id:listingId, userId:currUser.}})
+        const listing = await prisma.listing.deleteMany({where:{id:listingId, userId:currUser.id}})
         
         return NextResponse.json(listing);
     }catch(err: any){
