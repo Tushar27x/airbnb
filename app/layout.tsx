@@ -11,7 +11,7 @@ import LoginModal from './components/modals/LoginModal'
 import getCurrUser from './actions/getCurrUser'
 import RentModal from './components/modals/RentModal'
 import SearchModal from './components/modals/SearchModal'
-
+export const dynamic = "force-dynamic";
 const font = Nunito({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
