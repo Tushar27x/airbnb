@@ -1,0 +1,20 @@
+{
+    "redirects": [
+        {
+            "source":"/(.*)favorites",
+            "destination": "/favorites"
+        },
+        {
+            "source":"/(.*)trips",
+            "destination": "/trips"
+        },
+        {
+            "source":"/(.*)reservations",
+            "destination": "/reservations"
+        },
+        {
+            "source":"/(.*)properties",
+            "destination": "/properties"
+        }
+    ]
+}
