@@ -2,19 +2,23 @@
     "redirects": [
         {
             "source":"/(.*)favorites",
-            "destination": "/favorites"
+            "destination": "/favorites",
+            "permanent":true
         },
         {
             "source":"/(.*)trips",
-            "destination": "/trips"
+            "destination": "/trips",
+            "permanent":true
         },
         {
             "source":"/(.*)reservations",
-            "destination": "/reservations"
+            "destination": "/reservations",
+            "permanent":true
         },
         {
             "source":"/(.*)properties",
-            "destination": "/properties"
+            "destination": "/properties",
+            "permanent":true
         }
     ]
 }
