@@ -33,6 +33,7 @@ const RegisterModal = () => {
 
     axios.post('/api/register',data)
       .then(()=>{
+        toast.success('Registered!');
         registerModal.onClose();
         loginModal.onOpen();
       })
@@ -87,7 +88,7 @@ const RegisterModal = () => {
     <div className='flex flex-col gap-4 mt-3'>
       <hr />
 
-      <Button label='Continue with GitHub' outline icon={AiFillGithub} onClick={()=>signIn('github', { callbackUrl: "/" })}/>
+      <Button label='Continue with GitHub' outline icon={AiFillGithub} onClick={()=>signIn('github')}/>
       
       <div className='text-neutral-500 text-center mt-4 font-light'>
         <div className='flex flex-row justify-center items-center gap-2'>
